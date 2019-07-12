@@ -29,3 +29,4 @@ compiler_flags
 edit*.sh
 notebooks/*
 !notebooks/*.ipynb
+*.dylib

@@ -73,7 +73,7 @@ function WindowInteractor(id, uid, port) {
     var parsed = regex.exec(loc.pathname);
     if (parsed && parsed.length > 0) {
       var base = parsed[0];
-      connect(loc.protocol + "//" + loc.hostname + base + "proxy/" + port);
+      //connect(loc.protocol + "//" + loc.hostname + base + "proxy/" + port);
       connect(loc.protocol + "//" + loc.hostname + base + "user-redirect/proxy/" + port);
 
     }
