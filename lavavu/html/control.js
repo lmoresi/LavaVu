@@ -74,6 +74,8 @@ function WindowInteractor(id, uid, port) {
     if (parsed && parsed.length > 0) {
       var base = parsed[0];
       connect(loc.protocol + "//" + loc.hostname + base + "proxy/" + port);
+      connect(loc.protocol + "//" + loc.hostname + base + "user-redirect/proxy/" + port);
+
     }
 
     if (loc.protocol != 'file:') {
@@ -223,7 +225,7 @@ WindowInteractor.prototype.get_state = function() {
       that.redisplay_reset();
     } else
       console.log("Ajax Request Error: " + url + ", returned status code " + xhttp.status + " " + xhttp.statusText);
-  } 
+  }
   xhttp.open('GET', url, true);
   xhttp.send();
 }
@@ -244,4 +246,3 @@ WindowInteractor.prototype.redisplay_reset = function() {
 
   this.redisplay_timer = setTimeout(function() { console.log("Redisplay " + that.id); that.redisplay(); }, 10000);
 }
-
