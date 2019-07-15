@@ -73,8 +73,8 @@ function WindowInteractor(id, uid, port) {
     var parsed = regex.exec(loc.pathname);
     if (parsed && parsed.length > 0) {
       var base = parsed[0];
-      //connect(loc.protocol + "//" + loc.hostname + base + "proxy/" + port);
-      connect(loc.protocol + "//" + loc.hostname + base + "user-redirect/proxy/" + port);
+      connect(loc.protocol + "//" + loc.hostname + base + "proxy/" + port);
+      // connect(loc.protocol + "//" + loc.hostname + base + "user-redirect/proxy/" + port);
 
     }
 
@@ -82,6 +82,7 @@ function WindowInteractor(id, uid, port) {
       //(Don't bother for file:// urls)
       connect(loc.protocol + "//" + loc.hostname + ":" + port);
       connect(loc.protocol + "//" + loc.hostname + (loc.port ? ":" + loc.port : "") + "/proxy/" + port);
+      connect(loc.protocol + "//" + loc.hostname + (loc.port ? ":" + loc.port : "") + "/user-redirect/proxy/" + port);
     }
     if (loc.hostname != "localhost") {
       connect("https://localhost:" + port);
